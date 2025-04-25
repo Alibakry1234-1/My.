@@ -1,112 +1,331 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ali Abdullah Bakry - Profile</title>
+    <title>Ali Al-Bakry | Personal Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#4f46e5',
+                        'dark-bg': '#181818',
+                        'dark-card': '#262626',
+                        'light-card': '#ffffff',
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 5s ease infinite',
+                        'fade-in': 'fade-in 1s ease-out',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-position': '0% 50%',
+                            },
+                            '50%': {
+                                'background-position': '100% 50%',
+                            },
+                        },
+                        'fade-in': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(10px)',
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)',
+                            },
+                        },
+                    },
+                },
+            },
+        };
+    </script>
     <style>
-        body { transition: background-color 0.3s, color 0.3s; }
-        .dark-mode { background-color: #1f2937; color: #f3f4f6; }
-        .card { transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .bg-hilal { background: linear-gradient(135deg, #003087, #00c4ff); }
-        .rtl-text { direction: rtl; }
-        .ltr-text { direction: ltr; }
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+        
+        html {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #5D5CDE 0%, #4338ca 50%, #5D5CDE 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient-text 5s ease infinite;
+        }
+        
+        @keyframes gradient-text {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
+        
+        .animate-delay-400 {
+            animation-delay: 400ms;
+        }
+        
+        .dark .light-mode-icon {
+            display: none;
+        }
+        
+        .dark-mode-icon {
+            display: none;
+        }
+        
+        .dark .dark-mode-icon {
+            display: block;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .dark .card:hover {
+            box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.05), 0 10px 10px -5px rgba(255, 255, 255, 0.02);
+        }
     </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <header class="bg-hilal text-white py-6 text-center">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyg6vdsPauncr9_roEeiAUSz6xAO0D3ZOpMXLqmAkSkQ&s" alt="Ali Abdullah Bakry" class="w-32 h-32 rounded-full mx-auto mb-2">
-        <p class="text-lg mt-2">Senior Petroleum Assistant Engineer - Saudi Aramco</p>
-        <button id="theme-toggle" class="mt-4 px-4 py-2 bg-white text-blue-900 rounded-full hover:bg-gray-200">
-            <i class="fas fa-moon"></i> Dark Mode
+<body class="bg-gray-50 dark:bg-dark-bg text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div class="fixed top-5 right-5 z-50">
+        <button id="theme-toggle" class="p-2 rounded-full bg-white dark:bg-dark-card shadow-md hover:shadow-lg transition-all duration-300">
+            <svg class="light-mode-icon w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+            <svg class="dark-mode-icon w-6 h-6 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
         </button>
-    </header>
+    </div>
 
-    <main class="container mx-auto px-4 py-8">
-        <!-- Personal Information -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-blue-900 mb-4">Personal Information</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="card bg-white p-6 rounded-lg shadow-lg">
-                    <p><span class="rtl-text"><strong>الاسم:</strong> علي عبدالله بكري</span> <span class="ltr-text"><strong>Name:</strong> Ali Abdullah Bakry</span></p>
+    <main class="container mx-auto px-4 py-10 max-w-6xl">
+        <!-- Hero Section -->
+        <section class="flex flex-col-reverse lg:flex-row items-center justify-between py-10 mb-12 animate-fade-in">
+            <div class="lg:w-1/2 mt-10 lg:mt-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">علي عبدالله بكري</h1>
+                <h2 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Ali Abdullah Bakry</h2>
+                <p class="text-xl font-medium mb-6 text-primary">مهندس مساعد أول في هندسة البترول | Senior Petroleum Assistant Engineer</p>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        ارامكو السعودية | Saudi Aramco
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        خريص، السعودية | Khurais, Saudi Arabia
+                    </span>
                 </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg">
-                    <p><span class="rtl-text"><strong>تاريخ الميلاد:</strong> 16 فبراير 1994</span> <span class="ltr-text"><strong>Birth Date:</strong> February 16, 1994</span></p>
-                </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg">
-                    <p><span class="rtl-text"><strong>مكان الميلاد:</strong> جازان، المملكة العربية السعودية</span> <span class="ltr-text"><strong>Place of Birth:</strong> Jazan, Saudi Arabia</span></p>
-                </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg">
-                    <p><span class="rtl-text"><strong>مكان العمل:</strong> خريص، المملكة العربية السعودية</span> <span class="ltr-text"><strong>Place of Work:</strong> Khurais, Saudi Arabia</span></p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://www.tiktok.com/@alibakry94" target="_blank" class="social-icon text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+                        <i class="fab fa-tiktok text-2xl"></i>
+                    </a>
+                    <a href="https://snapchat.com/t/mAsyRgV4" target="_blank" class="social-icon text-gray-700 dark:text-gray-300 hover:text-yellow-400 dark:hover:text-yellow-400">
+                        <i class="fab fa-snapchat text-2xl"></i>
+                    </a>
+                    <a href="https://x.com/i3llawi1" target="_blank" class="social-icon text-gray-700 dark:text-gray-300 hover:text-blue-400 dark:hover:text-blue-400">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ali-al-bakry-39893a179" target="_blank" class="social-icon text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Information -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-blue-900 mb-4">Contact Information</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="card bg-white p-6 rounded-lg shadow-lg">
-                    <p><span class="ltr-text"><strong>Mobile:</strong> <a href="tel:+966568545133">+966568545133</a></span></p>
-                    <p><span class="ltr-text"><strong>Office:</strong> <a href="tel:+966135776624">+966135776624</a></span></p>
-                    <p><span class="ltr-text"><strong>Email:</strong> <a href="mailto:albakry.allawi@hmail.com">albakry.allawi@hmail.com</a></span></p>
-                </div>
-                <div class="card bg-white p-6 rounded-lg shadow-lg">
-                    <p><span class="ltr-text"><strong>Social Media:</strong></span></p>
-                    <div class="flex space-x-4 mt-2">
-                        <a href="https://www.tiktok.com/@alibakry94" target="_blank" class="text-blue-600 hover:text-blue-800">
-                            <i class="fab fa-tiktok fa-2x"></i>
-                        </a>
-                        <a href="https://snapchat.com/t/mAsyRgV4" target="_blank" class="text-yellow-500 hover:text-yellow-600">
-                            <i class="fab fa-snapchat fa-2x"></i>
-                        </a>
-                        <a href="https://x.com/i3llawi1?s=11" target="_blank" class="text-black hover:text-gray-700">
-                            <i class="fab fa-x-twitter fa-2x"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/ali-al-bakry-39893a179" target="_blank" class="text-blue-700 hover:text-blue-900">
-                            <i class="fab fa-linkedin fa-2x"></i>
-                        </a>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <!-- Profile Image Placeholder - Replace with actual image if available -->
+                    <div class="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center animate-pulse">
+                        <span class="text-6xl md:text-7xl font-bold text-white">علي</span>
+                    </div>
+                    <div class="absolute -bottom-2 -right-2 bg-white dark:bg-dark-card rounded-full p-3 shadow-lg">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                            <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+                        </svg>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Me -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold text-blue-900 mb-4">About Me</h2>
-            <div class="card bg-white p-6 rounded-lg shadow-lg">
-                <p><span class="ltr-text">I am Ali Abdullah Bakry, a Senior Petroleum Assistant Engineer at Saudi Aramco. Passionate about developing innovative engineering solutions and a dedicated supporter of Al-Hilal FC 💙</span> <span class="rtl-text">أنا علي عبدالله بكري، مهندس مساعد أول في هندسة البترول بأرامكو السعودية. شغوف بتطوير الحلول الهندسية المبتكرة وداعم مخلص لنادي الهلال 💙</span></p>
+        <!-- Info Cards Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <!-- Personal Info Card -->
+            <div class="card bg-white dark:bg-dark-card rounded-xl shadow-md p-6 animate-fade-in animate-delay-100">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 rounded-full bg-blue-100 dark:bg-blue-900 text-primary dark:text-blue-300 mr-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">المعلومات الشخصية</h3>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">تاريخ الميلاد:</span>
+                        <span>16 فبراير 1994</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">مكان الميلاد:</span>
+                        <span>جازان، المملكة العربية السعودية</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">Birth Date:</span>
+                        <span>February 16, 1994</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">Place of Birth:</span>
+                        <span>Jazan, Saudi Arabia</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Professional Info Card -->
+            <div class="card bg-white dark:bg-dark-card rounded-xl shadow-md p-6 animate-fade-in animate-delay-200">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300 mr-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">المعلومات المهنية</h3>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">المنصب الحالي:</span>
+                        <span>مهندس مساعد أول في هندسة البترول</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">جهة العمل:</span>
+                        <span>ارامكو السعودية</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">مكان العمل:</span>
+                        <span>خريص، المملكة العربية السعودية</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">Current Position:</span>
+                        <span>Senior Petroleum Assistant Engineer</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">Organization:</span>
+                        <span>Saudi Aramco</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">Place of Work:</span>
+                        <span>Khurais, Saudi Arabia</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact Info Card -->
+            <div class="card bg-white dark:bg-dark-card rounded-xl shadow-md p-6 animate-fade-in animate-delay-300">
+                <div class="flex items-center mb-4">
+                    <div class="p-3 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 mr-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold">معلومات التواصل</h3>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">الجوال:</span>
+                        <a href="tel:+966568545133" class="text-primary hover:underline">+966 56 854 5133</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">المكتب:</span>
+                        <a href="tel:+966135776624" class="text-primary hover:underline">+966 13 577 6624</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="font-semibold ml-2">البريد الإلكتروني:</span>
+                        <a href="mailto:albakry.allawi@hmail.com" class="text-primary hover:underline">albakry.allawi@hmail.com</a>
+                    </li>
+                </ul>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-6 border-t border-gray-200 dark:border-gray-700 animate-fade-in animate-delay-400">
+            <p class="text-gray-600 dark:text-gray-400">&copy; 2024 علي عبدالله بكري - Ali Abdullah Bakry. جميع الحقوق محفوظة.</p>
+        </footer>
     </main>
 
-    <footer class="bg-hilal text-white text-center py-4">
-        <p class="text-sm">© 2025 Ali Abdullah Bakry. All rights reserved.</p>
-    </footer>
-
     <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        // تحقق من الوضع المحفوظ أو الافتراضي
-        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            body.classList.add('dark-mode');
-            toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
-        } else {
-            body.classList.remove('dark-mode');
-            toggleButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Check for dark mode preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
         }
-
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const isDark = body.classList.contains('dark-mode');
-            toggleButton.innerHTML = isDark 
-                ? '<i class="fas fa-sun"></i> Light Mode' 
-                : '<i class="fas fa-moon"></i> Dark Mode';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        // Listen for changes to color scheme preferences
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+        
+        // Add animations with delays to elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fade-in');
+            animatedElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
         });
     </script>
+</body>
 </html>

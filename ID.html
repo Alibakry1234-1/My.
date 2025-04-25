@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,6 +122,22 @@
         .dark .card:hover {
             box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.05), 0 10px 10px -5px rgba(255, 255, 255, 0.02);
         }
+        
+        .bilingual-item {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .arabic-text {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .english-text {
+            direction: ltr;
+            text-align: left;
+        }
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-dark-bg text-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -140,22 +156,22 @@
         <!-- Hero Section -->
         <section class="flex flex-col-reverse lg:flex-row items-center justify-between py-10 mb-12 animate-fade-in">
             <div class="lg:w-1/2 mt-10 lg:mt-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">علي عبدالله بكري</h1>
-                <h2 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Ali Abdullah Bakry</h2>
-                <p class="text-xl font-medium mb-6 text-primary">مهندس مساعد أول في هندسة البترول | Senior Petroleum Assistant Engineer</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Ali Abdullah Bakry</h1>
+                <h2 class="text-xl md:text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-300 arabic-text">علي عبدالله بكري</h2>
+                <p class="text-xl font-medium mb-6 text-primary">Senior Petroleum Assistant Engineer | مهندس مساعد أول في هندسة البترول</p>
                 <div class="flex flex-wrap gap-3 mb-8">
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
-                        ارامكو السعودية | Saudi Aramco
+                        Saudi Aramco | ارامكو السعودية
                     </span>
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        خريص، السعودية | Khurais, Saudi Arabia
+                        Khurais, Saudi Arabia | خريص، السعودية
                     </span>
                 </div>
                 <div class="flex flex-wrap gap-4">
@@ -175,10 +191,9 @@
             </div>
             <div class="lg:w-1/2 flex justify-center">
                 <div class="relative w-64 h-64 md:w-80 md:h-80">
-                    <!-- Profile Image Placeholder - Replace with actual image if available -->
-                    <div class="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center animate-pulse">
-                        <span class="text-6xl md:text-7xl font-bold text-white">علي</span>
-                    </div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyg6vdsPauncr9_roEeiAUSz6xAO0D3ZOpMXLqmAkSkQ&s" 
+                         alt="Ali Al-Bakry" 
+                         class="w-full h-full rounded-full object-cover border-4 border-white dark:border-dark-card shadow-lg">
                     <div class="absolute -bottom-2 -right-2 bg-white dark:bg-dark-card rounded-full p-3 shadow-lg">
                         <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -199,24 +214,16 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold">المعلومات الشخصية</h3>
+                    <h3 class="text-xl font-bold">Personal Information | المعلومات الشخصية</h3>
                 </div>
                 <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">تاريخ الميلاد:</span>
-                        <span>16 فبراير 1994</span>
+                    <li class="bilingual-item">
+                        <span class="english-text">Birth Date: February 16, 1994</span>
+                        <span class="arabic-text">تاريخ الميلاد: 16 فبراير 1994</span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">مكان الميلاد:</span>
-                        <span>جازان، المملكة العربية السعودية</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">Birth Date:</span>
-                        <span>February 16, 1994</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">Place of Birth:</span>
-                        <span>Jazan, Saudi Arabia</span>
+                    <li class="bilingual-item">
+                        <span class="english-text">Place of Birth: Jazan, Saudi Arabia</span>
+                        <span class="arabic-text">مكان الميلاد: جازان، المملكة العربية السعودية</span>
                     </li>
                 </ul>
             </div>
@@ -229,32 +236,20 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold">المعلومات المهنية</h3>
+                    <h3 class="text-xl font-bold">Professional Information | المعلومات المهنية</h3>
                 </div>
                 <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">المنصب الحالي:</span>
-                        <span>مهندس مساعد أول في هندسة البترول</span>
+                    <li class="bilingual-item">
+                        <span class="english-text">Current Position: Senior Petroleum Assistant Engineer</span>
+                        <span class="arabic-text">المنصب الحالي: مهندس مساعد أول في هندسة البترول</span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">جهة العمل:</span>
-                        <span>ارامكو السعودية</span>
+                    <li class="bilingual-item">
+                        <span class="english-text">Organization: Saudi Aramco</span>
+                        <span class="arabic-text">جهة العمل: ارامكو السعودية</span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">مكان العمل:</span>
-                        <span>خريص، المملكة العربية السعودية</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">Current Position:</span>
-                        <span>Senior Petroleum Assistant Engineer</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">Organization:</span>
-                        <span>Saudi Aramco</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">Place of Work:</span>
-                        <span>Khurais, Saudi Arabia</span>
+                    <li class="bilingual-item">
+                        <span class="english-text">Place of Work: Khurais, Saudi Arabia</span>
+                        <span class="arabic-text">مكان العمل: خريص، المملكة العربية السعودية</span>
                     </li>
                 </ul>
             </div>
@@ -267,20 +262,20 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold">معلومات التواصل</h3>
+                    <h3 class="text-xl font-bold">Contact Information | معلومات التواصل</h3>
                 </div>
                 <ul class="space-y-3">
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">الجوال:</span>
-                        <a href="tel:+966568545133" class="text-primary hover:underline">+966 56 854 5133</a>
+                    <li class="bilingual-item">
+                        <span class="english-text">Mobile: <a href="tel:+966568545133" class="text-primary hover:underline">+966 56 854 5133</a></span>
+                        <span class="arabic-text">الجوال: <a href="tel:+966568545133" class="text-primary hover:underline">+966 56 854 5133</a></span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">المكتب:</span>
-                        <a href="tel:+966135776624" class="text-primary hover:underline">+966 13 577 6624</a>
+                    <li class="bilingual-item">
+                        <span class="english-text">Office: <a href="tel:+966135776624" class="text-primary hover:underline">+966 13 577 6624</a></span>
+                        <span class="arabic-text">المكتب: <a href="tel:+966135776624" class="text-primary hover:underline">+966 13 577 6624</a></span>
                     </li>
-                    <li class="flex items-start">
-                        <span class="font-semibold ml-2">البريد الإلكتروني:</span>
-                        <a href="mailto:albakry.allawi@hmail.com" class="text-primary hover:underline">albakry.allawi@hmail.com</a>
+                    <li class="bilingual-item">
+                        <span class="english-text">Email: <a href="mailto:albakry.allawi@hmail.com" class="text-primary hover:underline">albakry.allawi@hmail.com</a></span>
+                        <span class="arabic-text">البريد الإلكتروني: <a href="mailto:albakry.allawi@hmail.com" class="text-primary hover:underline">albakry.allawi@hmail.com</a></span>
                     </li>
                 </ul>
             </div>
@@ -288,7 +283,7 @@
 
         <!-- Footer -->
         <footer class="text-center py-6 border-t border-gray-200 dark:border-gray-700 animate-fade-in animate-delay-400">
-            <p class="text-gray-600 dark:text-gray-400">&copy; 2024 علي عبدالله بكري - Ali Abdullah Bakry. جميع الحقوق محفوظة.</p>
+            <p class="text-gray-600 dark:text-gray-400">&copy; 2024 Ali Abdullah Bakry - علي عبدالله بكري. All rights reserved.</p>
         </footer>
     </main>
 
